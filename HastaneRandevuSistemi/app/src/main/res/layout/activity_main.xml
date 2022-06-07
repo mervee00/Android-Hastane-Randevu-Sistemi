@@ -16,7 +16,7 @@
         android:layout_height="60dp"
         android:background="@color/purple_200"
         android:text="Yönetici Girişi"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

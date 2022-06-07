@@ -43,13 +43,21 @@ public class KayitActivity extends AppCompatActivity {
         }
 
         //Hasta kayıt
-        btnKayit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hastaVeritabani.hastaAdd(tc.getText().toString(),sifre.getText().toString(),adSoyad.getText().toString(),telefon.getText().toString());
-                Toast.makeText(KayitActivity.this, "Kayıt başarılı", Toast.LENGTH_SHORT).show();
-            }
-        });
+            btnKayit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    hastaVeritabani.hastaAdd(tc.getText().toString(),sifre.getText().toString(),adSoyad.getText().toString(),telefon.getText().toString());
+                    /*if(hastaVeritabani.hastaSearch(tc.getText().toString())!=null){
+                        hastaVeritabani.hastaAdd(tc.getText().toString(),sifre.getText().toString(),adSoyad.getText().toString(),telefon.getText().toString());
+                        Toast.makeText(KayitActivity.this, "Kayıt başarılı", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(KayitActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(KayitActivity.this, "TC Kimlik numarası ile zaten kayıt var.", Toast.LENGTH_SHORT).show();
+                */
+                }
+            });
     }
 
 

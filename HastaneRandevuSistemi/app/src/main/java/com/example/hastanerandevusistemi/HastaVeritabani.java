@@ -42,13 +42,17 @@ public class HastaVeritabani {
     }
 
     //Tabloya hasta ekler
-    public void hastaAdd(String tc,String sifre,String adsoyad,String telefon){
-        ContentValues val = new ContentValues();
-        val.put("tc",tc);
-        val.put("sifre",sifre);
-        val.put("adsoyad",adsoyad);
-        val.put("telefon",telefon);
-        veritabanim.insert("hastalar",null,val);
+    public void hastaAdd(String tc, String sifre, String adsoyad, String telefon){
+           Cursor cursor = veritabanim.query("hastalar", null, " tc=?", new String[]{tc}, null, null, null);
+           if (cursor.getCount() < 1) {
+               ContentValues val = new ContentValues();
+               val.put("tc", tc);
+               val.put("sifre", sifre);
+               val.put("adsoyad", adsoyad);
+               val.put("telefon", telefon);
+               veritabanim.insert("hastalar", null, val);
+               cursor.close();
+           }
     }
 
     //Hasta giris tc ile arar sifreyi bulur. Giris işlemi yapılır
